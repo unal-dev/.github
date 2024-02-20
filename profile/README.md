@@ -148,92 +148,92 @@ Local variables are not habitually declared at the start of their containing blo
 
 #### General Rules for Identifiers
 
--Use only ASCII letters, digits, underscores in some cases.
--Names should be descriptive and avoid abbreviations unless they are widely understood.
--Avoid abbreviations that could be ambiguous or unfamiliar outside your project.
--Examples of good names: `errorCount`, `dnsConnectionIndex`, `referrerUrl`, `customerId`.
--Examples of bad names: `n`, `nErr`, `nCompConns`, `wgcConnections`, `pcReader`, `cstmrId`, `kSecondsPerDay`.
+* Use only ASCII letters, digits, underscores in some cases.
+* Names should be descriptive and avoid abbreviations unless they are widely understood.
+* Avoid abbreviations that could be ambiguous or unfamiliar outside your project.
+* Examples of good names: `errorCount`, `dnsConnectionIndex`, `referrerUrl`, `customerId`.
+* Examples of bad names: `n`, `nErr`, `nCompConns`, `wgcConnections`, `pcReader`, `cstmrId`, `kSecondsPerDay`.
 
 #### Specific Naming Rules
 
 ##### Package Names
 
--Use lowerCamelCase.
--Example: `my.exampleCode.deepSpace`.
+* Use lowerCamelCase.
+* Example: `my.exampleCode.deepSpace`.
 
 ##### Class Names
 
--Use UpperCamelCase for classes, interfaces, records, and typedefs.
--Names are typically nouns or noun phrases.
--Examples: `Request`, `ImmutableList`, `VisibilityMode`.
+* Use UpperCamelCase for classes, interfaces, records, and typedefs.
+* Names are typically nouns or noun phrases.
+* Examples: `Request`, `ImmutableList`, `VisibilityMode`.
 
 ##### Method Names
 
--Use lowerCamelCase.
--Private methods should end with an underscore.
--Names are typically verbs or verb phrases.
--Example: `sendMessage`, `stop_`.
+* Use lowerCamelCase.
+* Private methods should end with an underscore.
+* Names are typically verbs or verb phrases.
+* Example: `sendMessage`, `stop_`.
 
 ##### Enum Names
 
--Use UpperCamelCase for enums and CONSTANT_CASE for individual items.
--Enums should generally be singular nouns.
--Example: `enum Color { RED, GREEN, BLUE }`.
+* Use UpperCamelCase for enums and CONSTANT_CASE for individual items.
+* Enums should generally be singular nouns.
+* Example: `enum Color { RED, GREEN, BLUE }`.
 
 ##### Constant Names
 
--Use CONSTANT_CASE.
--Consider the immutability of the value before naming it as a constant.
--Example: `const NUMBER = 5;`.
+* Use CONSTANT_CASE.
+* Consider the immutability of the value before naming it as a constant.
+* Example: `const NUMBER = 5;`.
 
 ##### Non-constant Field Names
 
--Use lowerCamelCase with a trailing underscore for private fields.
--Example: `computedValues`, `index_`.
+* Use lowerCamelCase with a trailing underscore for private fields.
+* Example: `computedValues`, `index_`.
 
 ##### Parameter Names
 
--Use lowerCamelCase.
--Avoid one-character names in public methods.
--Exception: Names may begin with a `$` when required by third-party frameworks.
+* Use lowerCamelCase.
+* Avoid one-character names in public methods.
+* Exception: Names may begin with a `$` when required by third-party frameworks.
 
 ##### Local Variable Names
 
--Use snake_case.
--Constants in function scopes are still named in lowerCamelCase.
+* Use snake_case.
+* Constants in function scopes are still named in lowerCamelCase.
 
 ##### Template Parameter Names
 
--Be concise and use all-caps, such as `TYPE` or `THIS`.
+* Be concise and use all-caps, such as `TYPE` or `THIS`.
 
 ##### Module-local Names
 
--Names that are not exported are implicitly private and do not end in an underscore.
+* Names that are not exported are implicitly private and do not end in an underscore.
 
 #### Camel Case Definition
 
--Convert the phrase to ASCII, remove any apostrophes, divide into words, and apply camel case rules.
--Lowercase everything, then uppercase the first character of each word for UpperCamelCase, or each word except the first for lowerCamelCase.
--Example: `XmlHttpRequest`, `newCustomerId`.
+* Convert the phrase to ASCII, remove any apostrophes, divide into words, and apply camel case rules.
+* Lowercase everything, then uppercase the first character of each word for UpperCamelCase, or each word except the first for lowerCamelCase.
+* Example: `XmlHttpRequest`, `newCustomerId`.
 
 ### Examples and Practices
 
 #### Good Practices
 
--Use descriptive names and avoid unnecessary abbreviations.
--Follow the specific rules for different types of identifiers to maintain consistency and readability.
+* Use descriptive names and avoid unnecessary abbreviations.
+* Follow the specific rules for different types of identifiers to maintain consistency and readability.
 
 #### Avoid
 
--Using ambiguous or unfamiliar abbreviations.
--Deleting letters within a word for the sake of abbreviation.
--Ignoring naming conventions for package, class, method, enum, constant, field, parameter, local variable, and template parameter names.
+* Using ambiguous or unfamiliar abbreviations.
+* Deleting letters within a word for the sake of abbreviation.
+* Ignoring naming conventions for package, class, method, enum, constant, field, parameter, local variable, and template parameter names.
 
 ## Project Structure
 
 ### React
 
--**React Projects:** Organize by feature or route, with components, hooks, and context in their respective directories. Use index files for export barrels to simplify imports.
+* **React Projects:** Organize by feature or route, with components, hooks, and context in their respective directories. Use index files for export barrels to simplify imports.
 
 ```bash
 src/
@@ -258,7 +258,7 @@ src/
 
 ### Nodejs
 
--**Node.js Projects:** Organize by functionality (e.g., `routes`, `controllers`, `models`), and use index files for export barrels to group exports together.
+* **Node.js Projects:** Organize by functionality (e.g., `routes`, `controllers`, `models`), and use index files for export barrels to group exports together.
 
 ```bash
 src/
@@ -276,40 +276,40 @@ src/
 
 ### Files
 
--Divide code into simple pieces, using `import` and `export` to connect code fragments.
--Use export barrels (`index.js`) to aggregate module exports, facilitating cleaner imports.
+* Divide code into simple pieces, using `import` and `export` to connect code fragments.
+* Use export barrels (`index.js`) to aggregate module exports, facilitating cleaner imports.
 
 #### File Names
 
--All lowercase, may include underscores (_), avoiding additional punctuation.
+* All lowercase, may include underscores (_), avoiding additional punctuation.
 
 ## TypeScript
 
 ### General TypeScript Practices
 
--**Strict Typing**: Enable strict mode in `tsconfig.json` to leverage TypeScript's full capabilities for catching errors at compile time and encouraging safer coding practices.
+* **Strict Typing**: Enable strict mode in `tsconfig.json` to leverage TypeScript's full capabilities for catching errors at compile time and encouraging safer coding practices.
 
--**Interfaces and Types**: Define interfaces and types for component props, API responses, and complex data structures to enhance code readability and maintainability, while utilizing TypeScript's type system to prevent common errors.
+* **Interfaces and Types**: Define interfaces and types for component props, API responses, and complex data structures to enhance code readability and maintainability, while utilizing TypeScript's type system to prevent common errors.
 
--**Path Aliases**: Configure path aliases in `tsconfig.json` to simplify imports and avoid complex relative paths in large projects, improving code clarity and maintainability.
+* **Path Aliases**: Configure path aliases in `tsconfig.json` to simplify imports and avoid complex relative paths in large projects, improving code clarity and maintainability.
 
--**Linting and Formatting**: Integrate tools like ESLint and Prettier with TypeScript-specific configurations to ensure code follows best practices and maintains consistency across the project.
+* **Linting and Formatting**: Integrate tools like ESLint and Prettier with TypeScript-specific configurations to ensure code follows best practices and maintains consistency across the project.
 
 ### React-Specific Practices
 
--**Custom Hooks**: Encourage the creation of custom hooks to encapsulate business logic and reuse behaviors across functional components, taking advantage of modern React features and improving code reusability.
+* **Custom Hooks**: Encourage the creation of custom hooks to encapsulate business logic and reuse behaviors across functional components, taking advantage of modern React features and improving code reusability.
 
--**Functional Components and Hooks**: Prefer functional components and hooks over class components to align with current React recommendations and better leverage TypeScript's capabilities for typing props, state, and contexts.
+* **Functional Components and Hooks**: Prefer functional components and hooks over class components to align with current React recommendations and better leverage TypeScript's capabilities for typing props, state, and contexts.
 
--**Lazy Loading and Code Splitting**: Use `React.lazy` and `Suspense` for lazy loading components and splitting code into smaller bundles to improve application performance, especially in large applications.
+* **Lazy Loading and Code Splitting**: Use `React.lazy` and `Suspense` for lazy loading components and splitting code into smaller bundles to improve application performance, especially in large applications.
 
 ### Node.js-Specific Practices
 
--**Typed Middleware**: For frameworks like Express, define interfaces for request and response objects in custom middleware to enhance type safety and facilitate integration with other services.
+* **Typed Middleware**: For frameworks like Express, define interfaces for request and response objects in custom middleware to enhance type safety and facilitate integration with other services.
 
--**Async Error Handling**: Use `async/await` for asynchronous operations and ensure proper error handling with `try/catch` blocks or error-handling middleware in Express.
+* **Async Error Handling**: Use `async/await` for asynchronous operations and ensure proper error handling with `try/catch` blocks or error-handling middleware in Express.
 
--**ORM TypeScript Support**: Choose an ORM(such as TypeORM or Sequelize) that has native support for TypeScript to simplify database operations and ensure type safety.
+* **ORM TypeScript Support**: Choose an ORM(such as TypeORM or Sequelize) that has native support for TypeScript to simplify database operations and ensure type safety.
 
 ## Git Guidelines
 
@@ -323,8 +323,8 @@ For this project, we adopt the `GitFlow` workflow strategy. Development efforts 
 
 ### Commit message codes
 
--**fix:** When fixing a bug
--**plus:** When adding a new feature
--**refactor:** When reorganizing or restructuring existent code
--**docs:** When adding documentation
--**style:** When changing code format
+* **fix:** When fixing a bug
+* **plus:** When adding a new feature
+* **refactor:** When reorganizing or restructuring existent code
+* **docs:** When adding documentation
+* **style:** When changing code format
