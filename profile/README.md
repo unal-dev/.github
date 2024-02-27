@@ -328,3 +328,55 @@ For this project, we adopt the `GitFlow` workflow strategy. Development efforts 
 * **refactor:** When reorganizing or restructuring existent code
 * **docs:** When adding documentation
 * **style:** When changing code format
+
+### GitFlow Basics Guide
+
+GitFlow is a workflow model for Git that defines a strict set of rules for creating branches and releases, making it easier to manage software development. This model focuses primarily on improving collaboration and standardising the development process.
+
+#### Main Branches with GitFlow
+
+With GitFlow, there are two main branches that exist throughout the project lifecycle:
+
+- `main` (formerly known as `master`): Contains the code in production.
+- `develop`: Serves as an integration branch for new features.
+
+#### Developing New Features
+
+New features are developed in `feature` branches, which are derived from `develop` and merged back into `develop` once completed.
+
+##### 1. Create a Feature Branch
+
+To start working on a new feature, create a `feature` branch based on `develop`:
+
+```bash
+git checkout develop
+git pull
+git checkout -b feature/nombre-caracteristica
+```
+
+Replace feature-name with a descriptive name for your feature.
+
+##### 2. Develop the Feature
+Make all necessary changes to this branch. Report your progress regularly:
+
+```bash
+git add .
+git commit -m "Descripción del cambio"
+```
+
+##### 3. Finalise a Feature
+
+Once the feature is complete and ready to be integrated, you must merge it back into develop:
+
+```bash
+git checkout develop
+git pull
+git merge feature/nombre-caracteristica
+git push origin develop
+```
+
+After merging the feature branch into develop, the feature/name-feature branch can be deleted if desired:
+
+```bash
+git branch -d feature/nombre-caracteristica
+```
